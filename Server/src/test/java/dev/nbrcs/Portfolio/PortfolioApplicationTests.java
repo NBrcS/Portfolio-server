@@ -1,10 +1,10 @@
-package dev.nbrcs.Portifolio;
+package dev.nbrcs.Portfolio;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PortifolioApplicationTests {
+class PortfolioApplicationTests {
 
 	@Test
 	void contextLoads() {
