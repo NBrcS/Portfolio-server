@@ -1,33 +1,30 @@
 package dev.nbrcs.Portfolio.Controller;
 
-import dev.nbrcs.Portfolio.Models.Course;
-import dev.nbrcs.Portfolio.Repository.CourseRepository;
+import dev.nbrcs.Portfolio.Models.Project;
 import dev.nbrcs.Portfolio.Repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/")
-public class ResponseController {
-
-    @Autowired
-    private CourseRepository courses;
+@RequestMapping("/projects")
+public class ProjectController {
     @Autowired
     private ProjectRepository projects;
 
     @GetMapping
-    public List<Object> response(){
+    public List<Project> response(){
+        return projects.findAll();
+    }
 
-        List<Object> response = null;
-
-        response.addAll(this.courses.findAll());
-        response.addAll(this.projects.findAll());
-
-        return response;
+    @GetMapping("/{id}")
+    public Optional<Project> getById(@RequestParam("id") Long id){
+        return projects.findById(id);
     }
 
 }
