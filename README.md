@@ -22,6 +22,9 @@ in it, will return JSON`s with objects that contains the metadata of each projec
 
   ### General updates to do
 
+  * Configure the swagger documentation
+
+  * Configure the spring security
   * Trade the endpoint returns from normal objects to http ResponseEntity returns 
  
   * Connect with postgreSql database
